@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/main_bg"
+    tools:context=".presentation.lostandfound.LostandFoundDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarLayoutTodoManage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:visibility="visible">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/appbarTodoManage"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/lavender"
+            app:navigationIcon="@drawable/ic_arrow_back_24"
+            app:navigationIconTint="@color/white"
+            app:title="Tambah Lost and Found"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="50dp">
+
+            <TextView
+                android:id="@+id/tvLostandFoundManageLabelTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Judul"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.002"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvLostandFoundManageLabelDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Deskripsi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etLostandFoundManageTitle" />
+
+            <TextView
+                android:id="@+id/tvLostandFoundManageLabelStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Status"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etLostandFoundManageDesc" />
+
+            <EditText
+                android:id="@+id/etLostandFoundManageTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corner"
+                android:ems="10"
+                android:inputType="text"
+                android:padding="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLostandFoundManageLabelTitle"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/etLostandFoundManageDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_corner"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:minLines="5"
+                android:padding="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLostandFoundManageLabelDesc"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Spinner
+                android:id="@+id/etLostandFoundManageStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/status"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLostandFoundManageLabelStatus" />
+
+
+            <Button
+                android:id="@+id/btnLostandFoundManageSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:backgroundTint="@color/lavender"
+                android:text="Simpan"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llTodoManageActionCover" />
+
+            <ProgressBar
+                android:id="@+id/pbLostandFoundManage"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/btnLostandFoundManageSave"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/btnLostandFoundManageSave"
+                app:layout_constraintTop_toTopOf="@+id/btnLostandFoundManageSave" />
+
+            <ImageView
+                android:id="@+id/ivTodoManageCover"
+                android:layout_width="390dp"
+                android:layout_height="133dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_image_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLostandFoundManageLabelImg" />
+
+            <LinearLayout
+                android:id="@+id/llTodoManageActionCover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivTodoManageCover">
+
+                <Button
+                    android:id="@+id/btnTodoManageCamera"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/lavender"
+                    android:text="Camera" />
+
+                <Button
+                    android:id="@+id/btnTodoManageGallery"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:backgroundTint="@color/lavender"
+                    android:text="Gallery" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvLostandFoundManageLabelImg"
+                style="@style/TextBold.H6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:text="Gambar barang"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLostandFoundManageLabelStatus" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>
